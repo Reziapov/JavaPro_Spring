@@ -20,17 +20,17 @@ public class ProductService {
             Product.builder().id(16).name("orange").cost(15.99).build()
     );
 
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts() {
         return products;
     }
 
-    public Optional<Product> getProductById(int id){
+    public Optional<Product> getProductById(int id) {
         return products.stream()
                 .filter(order -> order.getId() == id)
                 .findFirst();
     }
 
-    public void addProduct(Product product){
+    public void addProduct(Product product) {
         products.add(product);
     }
 

@@ -14,27 +14,27 @@ import java.util.Optional;
 @RequestMapping("/products")
 public class ProductController {
 
-        private final ProductService productService;
+    private final ProductService productService;
 
 
-        @Autowired
-        private ProductController(ProductService productService) {
-            this.productService = productService;
-        }
+    @Autowired
+    private ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
 
-        @GetMapping
-        public List<Product> getAllOrders() {
-            return this.productService.getAllProducts();
-        }
+    @GetMapping
+    public List<Product> getAllOrders() {
+        return this.productService.getAllProducts();
+    }
 
-        @GetMapping("/{id}")
-        public Optional<Product> getOrderById(@PathVariable int id) {
-            return this.productService.getProductById(id);
-        }
+    @GetMapping("/{id}")
+    public Optional<Product> getOrderById(@PathVariable int id) {
+        return this.productService.getProductById(id);
+    }
 
-        @PostMapping
-        public void addProduct(@RequestBody Product product) {
-            productService.addProduct(product);
-        }
+    @PostMapping
+    public void addProduct(@RequestBody Product product) {
+        productService.addProduct(product);
+    }
 }
